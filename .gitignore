@@ -2,70 +2,70 @@
 /build/
 /bin/
 target/
- 
+
 # OS Files #
- .DS_Store
-  
-  *.class
-   
+.DS_Store
+
+*.class
+
 # Package Files #
-   *.jar
-   *.war
-   *.ear
-   *.db
-    
+*.jar
+*.war
+*.ear
+*.db
+
 ######################
 # Windows
 ######################
-     
+
 # Windows image file caches
-     Thumbs.db 
-      
+Thumbs.db 
+
 # Folder config file
-      Desktop.ini
-       
+Desktop.ini
+
 ######################
 # OSX
 ######################
-        
-        .DS_Store
-        .svn
-         
+
+.DS_Store
+.svn
+
 # Thumbnails
-         ._*
-          
+._*
+
 # Files that might appear on external disk
-          .Spotlight-V100
-          .Trashes
-           
-            
+.Spotlight-V100
+.Trashes
+
+
 ######################
 # Eclipse
 ######################
-             
-             *.pydevproject
-             .project
-             .metadata
-             bin/**
-             tmp/**
-             tmp/**/*
-             *.tmp
-             *.bak
-             *.swp
-             *~.nib
-             local.properties
-             .classpath
-             .settings/
-             .loadpath
-             /src/main/resources/rebel.xml
+
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+/src/main/resources/rebel.xml
 # External tool builders
-             .externalToolBuilders/
-              
+.externalToolBuilders/
+
 # Locally stored "Eclipse launch configurations"
-              *.launch
-               
+*.launch
+
 # CDT-specific
-               .cproject
-                
+.cproject
+
 # PDT-specific
-                .buildpath
+.buildpath
