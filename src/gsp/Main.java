@@ -4,8 +4,8 @@ import gsp.Maze.GraphSearchMode;
 
 public class Main {
 	static Maze maze;
-	final static int DEFAULT_HEIGHT = 100;
-	final static int DEFAULT_WIDTH = 100;
+	final static int DEFAULT_HEIGHT = 20;
+	final static int DEFAULT_WIDTH = 20;
 	final static GraphSearchMode DEFAULT_GSM = Maze.GraphSearchMode.BFS;
 
 	public static void main(String[] args) {
