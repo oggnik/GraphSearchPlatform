@@ -87,7 +87,7 @@ public class Maze {
 		}
 		String[][] strMaze = getStringMaze();
 		for (Tile tile : path) {
-			strMaze[tile.getY()][tile.getX()] = "HI";
+			strMaze[tile.getY()][tile.getX()] = "██";
 		}
 		printMaze(strMaze);
 	}
