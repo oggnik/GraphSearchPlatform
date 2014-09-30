@@ -77,6 +77,11 @@ public class Maze {
 
 	public void printShortestPath(GraphSearchMode mode) {
 		List<Tile> path = calculateShortestPath(mode);
+		if (path == null) {
+			// No path, print maze
+			printMaze(getStringMaze());
+			return;
+		}
 		String[][] strMaze = getStringMaze();
 		for (Tile tile : path) {
 			strMaze[tile.getY()][tile.getX()] = "HI";
