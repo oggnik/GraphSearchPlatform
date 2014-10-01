@@ -1,7 +1,10 @@
 package gsp;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 
 public class Maze {
 
@@ -122,12 +125,70 @@ public class Maze {
 	}
 
 	private List<Tile> calculateBFS() {
-		// TODO Auto-generated method stub
+		Tile start = maze[startY][startX];
+		start.setVisited(true);
+		Queue<Tile> tiles = new LinkedList<Tile>();
+		tiles.add(start);
+		while (!tiles.isEmpty()) {
+			Tile current = tiles.remove();
+			if (current.isGoal(goalX, goalY)) {
+				// This is the goal, return the list of nodes in the chain
+				ArrayList<Tile> path = new ArrayList<Tile>();
+				// Don't add the final one to the path (printing reasons)
+				current = current.getParent();
+				while (current.getParent() != null) {
+					path.add(0, current);
+					current = current.getParent();
+				}
+				return path;
+			}
+			// It is not the goal, add the unvisited neighbors
+			List<Tile> neighbors = getAdjacentTiles(current);
+			for (Tile t : neighbors) {
+				if (!t.isVisited()) {
+					// Unvisited, lets go there
+					t.setVisited(true);
+					// Set the parent
+					t.setParent(current);
+					// Push the tile onto the tiles to visit stack
+					tiles.add(t);
+				}
+			}
+		}
 		return null;
 	}
 
 	private List<Tile> calculateDFS() {
-		// TODO Auto-generated method stub
+		Tile start = maze[startY][startX];
+		start.setVisited(true);
+		Stack<Tile> tiles = new Stack<Tile>();
+		tiles.push(start);
+		while (!tiles.isEmpty()) {
+			Tile current = tiles.pop();
+			if (current.isGoal(goalX, goalY)) {
+				// This is the goal, return the list of nodes in the chain
+				ArrayList<Tile> path = new ArrayList<Tile>();
+				// Don't add the final one to the path (printing reasons)
+				current = current.getParent();
+				while (current.getParent() != null) {
+					path.add(0, current);
+					current = current.getParent();
+				}
+				return path;
+			}
+			// It is not the goal, add the unvisited neighbors
+			List<Tile> neighbors = getAdjacentTiles(current);
+			for (Tile t : neighbors) {
+				if (!t.isVisited()) {
+					// Unvisited, lets go there
+					t.setVisited(true);
+					// Set the parent
+					t.setParent(current);
+					// Push the tile onto the tiles to visit stack
+					tiles.push(t);
+				}
+			}
+		}
 		return null;
 	}
 
