@@ -87,7 +87,7 @@ public class Maze {
 		}
 		String[][] strMaze = getStringMaze();
 		for (Tile tile : path) {
-			strMaze[tile.getY()][tile.getX()] = "██";
+			strMaze[tile.getY()][tile.getX()] = "PP";
 		}
 		printMaze(strMaze);
 	}
@@ -99,16 +99,16 @@ public class Maze {
 	private List<Tile> getAdjacentTiles(int x, int y) {
 		ArrayList<Tile> adjTiles = new ArrayList<Tile>();
 		Tile up = getTile(x, y + 1);
-		if (up != null)
+		if (up != null && up.isTraversable())
 			adjTiles.add(up);
 		Tile down = getTile(x, y - 1);
-		if (down != null)
+		if (down != null && down.isTraversable())
 			adjTiles.add(down);
 		Tile left = getTile(x - 1, y);
-		if (left != null)
+		if (left != null && left.isTraversable())
 			adjTiles.add(left);
 		Tile right = getTile(x + 1, y);
-		if (right != null)
+		if (right != null && right.isTraversable())
 			adjTiles.add(right);
 		return adjTiles;
 	}
